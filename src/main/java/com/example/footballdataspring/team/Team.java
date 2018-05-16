@@ -16,10 +16,10 @@ public class Team {
     private String country;
     private String city;
 
-    @OneToMany(mappedBy="homeTeam")
+    @OneToMany(mappedBy="homeTeam", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Match> homeMatches;
 
-    @OneToMany(mappedBy="awayTeam")
+    @OneToMany(mappedBy="awayTeam", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Match> awayMatches;
 
     public Long getId() {

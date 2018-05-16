@@ -40,7 +40,7 @@ public class TeamController {
     }
 
     @PostMapping("/add")
-    public Team create(@ModelAttribute Team team){
+    public Team create(@RequestBody Team team){
         service.create(team);
 
         return team;
