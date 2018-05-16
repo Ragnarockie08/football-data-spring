@@ -13,12 +13,12 @@ public class MatchController {
         this.service = service;
     }
 
-    @GetMapping({"/", "/index"})
+    @GetMapping("/index")
     public Iterable<Match> index(){
         return service.getAll();
     }
 
-    @GetMapping({"/id/{id}", "/index/{id}"})
+    @GetMapping("/index/{id}")
     public Optional<Match> getById(@PathVariable Long id){
         return service.getById(id);
     }
