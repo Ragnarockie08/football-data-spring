@@ -14,8 +14,13 @@ public class MatchServiceImpl implements MatchService{
     }
 
     @Override
-    public Iterable<Match> getAll() {
-        return repository.findAll();
+    public List<Match> getAll() {
+
+        List<Match> result = new ArrayList<>();
+        repository.findAll().forEach(result::add);
+
+        Collections.sort(result, Match.dateComparator);
+        return result;
     }
 
     @Override

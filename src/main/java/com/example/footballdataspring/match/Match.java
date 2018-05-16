@@ -4,6 +4,8 @@ package com.example.footballdataspring.match;
 import com.example.footballdataspring.team.Team;
 
 import javax.persistence.*;
+import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
 
 @Entity
@@ -64,4 +66,19 @@ public class Match {
     public void setGoalsAway(int goalsAway) {
         this.goalsAway = goalsAway;
     }
+
+    public static Comparator<Match> dateComparator = (o1, o2) -> {
+
+        int result;
+
+        if (o1.getDate().equals(o2.getDate())){
+            result = 0;
+        } else if (o1.getDate().before(o2.getDate())){
+            result = -1;
+        } else {
+            result = 1;
+        }
+
+        return result;
+    };
 }

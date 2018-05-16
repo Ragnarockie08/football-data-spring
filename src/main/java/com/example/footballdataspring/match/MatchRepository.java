@@ -15,8 +15,8 @@ public interface MatchRepository extends CrudRepository<Match, Long> {
     Iterable<Match> findTop1ByMostGoals();
 
     @Query("select m from Match m " +
-            "where m.date >= :currentDate"
+            "where m.date >= :weekAgo"
     )
-    Iterable<Match> findByDate(@Param("currentDate") Date date);
+    Iterable<Match> findByDate(@Param("weekAgo") Date date);
 
 }
