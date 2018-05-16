@@ -14,10 +14,10 @@ public class Match {
     private Long id;
     private Date date;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     private Team homeTeam;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     private Team awayTeam;
 
     @Column(name = "goals_home")

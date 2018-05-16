@@ -16,10 +16,10 @@ public class Team {
     private String country;
     private String city;
 
-    @OneToMany(mappedBy="homeTeam", fetch=FetchType.EAGER, cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy="homeTeam")
     private Set<Match> homeMatches;
 
-    @OneToMany(mappedBy="awayTeam", fetch=FetchType.EAGER, cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy="awayTeam")
     private Set<Match> awayMatches;
 
     public Long getId() {
